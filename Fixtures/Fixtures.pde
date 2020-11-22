@@ -29,24 +29,24 @@ void draw() {
   background(255);
 
   box2d.step();
-
+  
   for (Boundary wall : boundaries) {
     wall.display();
   }
 
-  //for (Lollipop pop : pops) {
-  //  pop.display();
-  //}
+  for (Lollipop pop : pops) {
+    pop.display();
+  }
 
-  //for (int i = pops.size()-1; i >= 0; i--) {
-  //  Lollipop p = pops.get(i);
-  //  if (p.done()) {
-  //    pops.remove(i);
-  //  }
-  //}
+  for (int i = pops.size()-1; i >= 0; i--) {
+    Lollipop p = pops.get(i);
+    if (p.done()) {
+      pops.remove(i);
+    }
+  }
 }
 
-//void mousePressed() {
-//  Lollipop p = new Lollipop(mouseX, mouseY);
-//  pops.add(p);
-//}
+void mousePressed() {
+  Lollipop p = new Lollipop(mouseX, mouseY);
+  pops.add(p);
+}
